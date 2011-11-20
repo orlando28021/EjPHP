@@ -1,0 +1,140 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../../bodega2.0/view/css/style.css" />
+    
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo"/></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner"/></div></td>
+    <td><form name="miCuenta" method="post" action="../../bodega2.0/view/?opcion=ingresar">
+      <div id="cerrarSesion">
+      <table>
+        <tr>
+          <td colspan="2">Bienvenido, <?php echo $usuario->get_correoElectronico(); ?></td>
+        </tr>
+        <tr>
+          <td><a href="?opcion=miCuenta">Mi cuenta</a></td>
+          <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+        </tr>
+      </table>
+      </div>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table  >
+      <tr>
+        <td><a href="?opcion=principal"><img src="../img/botones/Inicio1.png"/></a></td>
+        <td><a href="?opcion=nosotros"><img src="../img/botones/Nosotros.png"/></a></td>
+        <td><a href="?opcion=catalogo"><img src="../img/botones/Catalogo.png"/></a></td>
+        <td><a href="?opcion=novedades"><img src="../img/botones/Novedades.png"/></a></td>
+        <td><a href="?opcion=contactenos"><img src="../img/botones/contactenos.png"/></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+    <tr>
+    <td colspan="4"><form name="modificarCuenta" method="post" action="?opcion=modificarUser">
+      <table align="center">
+        <tr>
+          <td><table>
+            <tr>
+              <td><h1>Modificar Cuenta</h1></td>
+            </tr>
+          </table></td>
+          <td><table>
+            <tr>
+              <td class="td1MC"><p class="letrasContac">Formato de Cont&aacute;cto</p></td>
+            </tr>
+            
+            <tr>
+              <td>
+                <p class="margenCuenta">Tel&eacute;fono de Cont&aacute;cto*</p>
+              </td>
+              <td><input type="text" name="telefono" value="<?php echo $usuario->get_telefono();?>"/></td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td><table width="512">
+            <tr>
+              <td><h3>Datos Personales</h3></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">DNI*</p>
+              </td>
+              <td><input type="text" name="dni" value="<?php echo $usuario->get_dni();?>"/></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Nombres*</p>
+              </td>
+              <td><input type="text" name="nombres" value="<?php echo $usuario->get_nombre();?>"/></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Apellido Paterno*</p>
+              </td>
+              <td><input type="text" name="apellidoP" value="<?php echo $usuario->get_apellidoPaterno();?>"/></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Apellido Materno*</p>
+              </td>
+              <td><input type="text" name="apellidoM" value="<?php echo $usuario->get_apellidoMaterno();?>"/></td>
+            </tr>
+            <tr>
+              <td class="alto" valign="bottom"><a href="?opcion=miCuenta">Volver a mi Cuenta</a></td>
+              
+            </tr>
+          </table></td>
+          <td><table width="512" border="0" cellspacing="0">
+            <tr>
+              <td class="td1MC"><h3>Ingresar Direcci&oacute;n de Residencia</h3></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Distrito*</p>
+              </td>
+              <td><select name="distrito">
+                <option>La Molina</option>
+                <option>Miraflores</option>
+              </select></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Direcci&oacute;n*</p>
+              </td>
+              <td><input type="text" name="direccion" value="<?php echo $usuario->get_direccion();?>"/></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Departamento*</p>
+              </td>
+              <td><input type="text" name="depart" value="<?php echo $usuario->get_departamento();?>"/></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Referencia</p>
+              </td>
+              <td><input type="text" name="referencia" value="<?php echo $usuario->get_referencia();?>"/></td>
+            </tr>
+            <tr>
+               <td class="alto"  valign="middle"><input type="submit" name="modificar" value="Modificar">
+              <input type="submit" name="borrar" value="Borrar"></td>
+            </tr>
+          </table></td>
+        </tr>
+      </table>
+	  </form>
+   </td>   
+  </tr>
+</table>
+</body>
+</html>

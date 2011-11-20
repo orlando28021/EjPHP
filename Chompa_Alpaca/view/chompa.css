@@ -1,0 +1,36 @@
+@charset "utf-8";
+table {
+	background-color: #CCC;
+	text-align: center;
+	border-top-style: double;
+	border-right-style: double;
+	border-bottom-style: double;
+	border-left-style: double;
+	border-top-color: #000;
+	border-right-color: #000;
+	border-bottom-color: #000;
+	border-left-color: #000;
+}
+th {
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-color: #CCC;
+}
+td {
+	background-color: #FFF;
+}
+
+p,a,h1{
+	
+	text-align: center;
+	font-size: 14px;
+	
+}
+body {
+	background-image: url(file:///C|/Users/ShadowKid/Desktop/chompa_background.jpg);
+}
+.tablas {
+	text-align: center;
+}
+
+

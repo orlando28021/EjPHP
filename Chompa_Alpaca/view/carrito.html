@@ -1,0 +1,37 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chompa Alpaca</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="chompa.css" />
+    </head>
+    <body>
+        <div>
+            <form method="post" action="">
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                    </tr>
+                    <?php foreach($items as $producto){ ?>
+                    <tr>
+                        <td><?php echo $producto->get_nombre(); ?></td>
+                        <td><?php echo $producto->get_precio(); ?></td>
+                        <td><?php echo $cantidades[$producto->get_id()]; ?></td>
+                    </tr>
+                    <?php } ?>
+                        
+                </table>
+                <p>
+                    
+                    <a href="view.php?op=volverCompra">Volver</a>
+                </p>
+            </form>
+        </div>
+    </body>
+</html>

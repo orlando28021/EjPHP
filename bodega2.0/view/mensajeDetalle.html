@@ -1,0 +1,89 @@
+<!--<!--<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+<head><title>El Bodeguero 2.0::Mensaje Detalle</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo"/></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner"/></div></td>
+    <td>
+        <form name="mensajeDetalle" method="post" action="?opcion=salir">
+            <div id="cerrarSesion">
+                <table>
+                    <tr>
+                      <td>Bienvenido, Administrador</td>
+                    </tr>
+                    <tr>
+                      <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+                    </tr>
+                </table>
+            </div>
+        </form>        
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="6">
+        <table>
+          <tr>
+        <td><a href="?opcion=principalA"><img src="../img/botones/Inicio2.png"></a></td>
+        <td><a href="?opcion=clientes"><img src="../img/botones/Clientes.png"></a></td>
+        <td><a href="?opcion=producto"><img src="../img/botones/Productos.png"></a></td>
+        <td><a href="?opcion=proveedores"><img src="../img/botones/Proveedores.png"></a></td>
+        <td><a href="?opcion=historial"><img src="../img/botones/Historial.png"></a></td>
+        <td><a href="?opcion=mensajess"><img src="../img/botones/Mensajes.png"></a></td>
+      </tr>
+        </table>
+    <br />
+    <br />
+    </td>
+  </tr>
+  <tr>
+      <td colspan="6">
+          <form method="post" action="">
+              <table class="tabla1MD">
+                  <tr>
+                      <td>
+                          <table class="tabla2MD">
+                              <tr>
+                                  <td>
+                                      <a href="?opcion=enviarNuevo">Nuevo</a>                                    
+                                  </td>
+                                  <td> <a href="?opcion=regresar">Bandeja de Entrada</a></td>
+                              </tr>
+                              <?php foreach($mensaje as $fila){ ?>
+                              <tr>
+                                  <td>De: <?php echo $fila->get_correo(); ?></td>
+                                  <td class="td1MD">Fecha: 22/04/20</td>
+                              </tr>
+                              <tr><td colspan="2">Asunto: <?php echo $fila->get_nombre(); ?></td></tr>
+                              <tr>
+                                  <td colspan="2">
+                                      <textarea rows="15" cols="40" ><?php echo $fila->get_mensajeContenido(); ?></textarea>
+                                  </td>
+                              </tr>
+                              <?php } ?>
+                          </table>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>&nbsp;</td>
+                  </tr>                   
+              </table>
+          </form>
+      </td>
+  </tr>
+
+</table>
+</body>
+</html>

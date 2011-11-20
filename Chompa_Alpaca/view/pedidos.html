@@ -1,0 +1,35 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pedidos - Chompa Alpaca</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="chompa.css" />
+    </head>
+    <body>
+        <div>
+            <form>
+                <table border="">
+                    <tr>
+                        <th>ID</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                        <th>Id Producto</th>
+                    </tr>
+                    <?php foreach($lista as $producto){ ?>
+                    <tr>
+                        <td><?php echo $producto->get_id(); ?></td>
+                        <td><?php echo $producto->get_fecha(); ?></td>
+                        <td><?php echo $producto->get_estado(); ?></td>
+                        <td><?php echo $producto->get_productoId(); ?></td>
+                    </tr>
+                    <?php } ?>
+                        
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

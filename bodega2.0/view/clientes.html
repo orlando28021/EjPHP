@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg"  class="logo"/></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner" /></div></td>
+    <td>
+      <form name="clientes" method="post" action="?opcion=salir">
+            <div id="cerrarSesion">
+                <table>
+                    <tr>
+                      <td>Bienvenido, Administrador</td>
+                    </tr>
+                    <tr>
+                      <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+                    </tr>
+                </table>
+            </div>
+        </form>        
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="6">
+        <table width="100%" border="0" >
+          <tr>
+        <td><a href="?opcion=principalA"><img src="../img/botones/Inicio2.png"></a></td>
+        <td><a href="?opcion=clientes"><img src="../img/botones/Clientes.png"></a></td>
+        <td><a href="?opcion=producto"><img src="../img/botones/Productos.png"></a></td>
+        <td><a href="?opcion=proveedores"><img src="../img/botones/Proveedores.png"></a></td>
+        <td><a href="?opcion=historial"><img src="../img/botones/Historial.png"></a></td>
+        <td><a href="?opcion=mensajes"><img src="../img/botones/Mensajes.png"></a></td>
+      </tr>
+        </table>
+    <br />
+    <br />
+    </td>
+  </tr>
+  <tr>
+      <td colspan="6">
+          <form method="post" action="?opcion=buscarCliente">
+              <table>
+                  
+                  <tr>
+                      <th colspan="2" align="left">Clientes</th>                  
+                  </tr>
+                  <tr>
+                      <td width="50%" align="center"><a href="?opcion=clientes">Mostrar Todos</a></td>
+                      <td width="50%">
+                          <p>B&uacute;squeda:
+                              <input type="text" name="buscarCliente"   placeholder="Nombre de Usuario " />
+                              <a><input type="submit" name="buscar" value="Buscar" /></a>
+                         
+                          </p>                           
+                      </td>
+                  </tr>
+                  <tr>
+                      <td colspan="2">&nbsp;</td>
+                  </tr>
+                  <tr>
+                      <td class="clientes">
+                          <table class="clientes">
+
+                              <tr>
+                                  <th>Codigo</th><th>Nombres</th>
+                                  <th>Apellido Paterno</th>
+                                  <th>Apellido Materno</th>
+                                  <th>DNI</th><th>Opcion</th>
+                              </tr>
+                               <?php foreach($clientes as $cliente){ ?>
+                              <tr>
+                                  <td><?php echo $cliente->get_usuarioId(); ?></td>
+                                  <td><?php echo $cliente->get_nombre(); ?></td>
+                                  <td><?php echo $cliente->get_apellidoPaterno(); ?></td>
+                                  <td><?php echo $cliente->get_apellidoMaterno(); ?></td>
+                                  <td><?php echo $cliente->get_dni(); ?></td>
+                                   <td>
+                                       <a href="?opcion=detalleCliente&id=<?php echo $cliente->get_usuarioId(); ?>"><img src="../img/botones/opcionVer.png"/></a>
+                                      <a href="?opcion=eliminarCliente&id=<?php echo $cliente->get_usuarioId(); ?>"><img src="../img/botones/opcionEliminar.png"/></a>
+                                  </td>
+                              </tr>
+                              <?php } ?>
+                          </table>
+                      </td>
+                  </tr>                      
+              </table>
+          </form>
+      </td>
+  </tr>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../../bodega2.0/view/css/style.css" />
+    
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo"/></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner"/></div></td>
+    <td><form name="miCuenta" method="post" action="../../bodega2.0/view/?opcion=ingresar">
+      <div id="cerrarSesion">
+      <table>
+        <tr>
+          <td colspan="2">Bienvenido, <?php echo $usuario->get_correoElectronico(); ?></td>
+        </tr>
+        <tr>
+          <td><a href="?opcion=miCuenta">Mi cuenta</a></td>
+          <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+        </tr>
+      </table>
+      </div>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table  >
+      <tr>
+        <td><a href="?opcion=principal"><img src="../img/botones/Inicio1.png"/></a></td>
+        <td><a href="?opcion=nosotros"><img src="../img/botones/Nosotros.png"/></a></td>
+        <td><a href="?opcion=catalogo"><img src="../img/botones/Catalogo.png"/></a></td>
+        <td><a href="?opcion=novedades"><img src="../img/botones/Novedades.png"/></a></td>
+        <td><a href="?opcion=contactenos"><img src="../img/botones/contactenos.png"/></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+    <tr>
+    <td  class="td1Cuenta" colspan="4" ><form name="formmc" method="post" action="">
+      <table class="tableCuenta">
+        <tr>
+          <td valign="top"><table class="table2Cuenta">
+            <tr>
+              <td class="td2Cuenta">Mi Cuenta</td>
+              <td class="td3Cuenta"><a href="?opcion=modificarCuenta">Modificar</a></td>
+            </tr>
+          </table></td>
+          <td><table class="table3Cuenta" >
+            <tr>
+              <td class="letraCuenta, anchotd ">Formato de Cont&aacute;cto</td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Correo*</p>
+              </td>
+              <td><?php echo $usuario->get_correoElectronico(); ?></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Tel&eacute;fono de Cont&aacute;cto*</p>
+             </td>
+              <td><?php echo $usuario->get_telefono(); ?></td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td><table>
+            <tr>
+              <td class="letraCuenta">Datos Personales</td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">DNI*</p>
+				</td>
+              <td><?php echo $usuario->get_dni(); ?></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Nombres*</p>
+			  </td>
+              <td><?php echo $usuario->get_nombre(); ?></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Apellido Paterno*</p>
+              </td>
+              <td><?php echo $usuario->get_apellidoPaterno(); ?></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Apellido Materno*</p>
+              </td>
+              <td><?php echo $usuario->get_apellidoMaterno();?></td>
+            </tr>
+          </table></td>
+          <td><table>
+            <tr>
+              <td class="letraCuenta, anchotd">Ingresar Direcci&oacute;n de Residencia</td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Distrito*</p>
+              </td>
+              <td><?php echo $usuario->get_distrito(); ?></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Direcci&oacute;n*</p>
+              </td>
+              <td><?php echo $usuario->get_direccion();?></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Departamento*</p>
+              </td>
+              <td><?php echo $usuario->get_departamento(); ?></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="margenCuenta">Referencia</p>
+              </td>
+              <td><?php echo $usuario->get_referencia(); ?></td>
+            </tr>
+          </table></td>
+        </tr>
+      </table></form>
+      
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>        
+      
+   </td>   
+  </tr>
+</table>
+</body>
+</html>

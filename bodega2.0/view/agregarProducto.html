@@ -1,0 +1,107 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo" /></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg"  class="banner"/></div></td>
+    <td><form name="agregarProducto" method="post" action="">
+      <div id="cerrarSesion">
+      <table>
+        <tr>
+          <td>Bienvenido, Administrador</td>
+        </tr>
+        <tr>
+            <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+        </tr>
+      </table>
+      </div>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principalA"><img src="../img/botones/Inicio2.png"></a></td>
+        <td><a href="?opcion=clientes"><img src="../img/botones/Clientes.png"></a></td>
+        <td><a href="?opcion=producto"><img src="../img/botones/Productos.png"></a></td>
+        <td><a href="?opcion=proveedores"><img src="../img/botones/Proveedores.png"></a></td>
+        <td><a href="?opcion=historial"><img src="../img/botones/Historial.png"></a></td>
+        <td><a href="?opcion=mensajes"><img src="../img/botones/Mensajes.png"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  </table>
+  <div id="adminMain">
+<div id="adminContent">
+        <h1>Agregar Producto</h1>
+        <form name="formAgregarProducto" method="post" action="?opcion=agregarProducto">
+        <table class="tablaAgregarProducto" >
+            <tr>
+                <td><label for="proveedor">Proveedor*</label></td>
+                <?php if($proveedorEncontrado != null) { ?>
+                <td><input type="text" name="proveedor" value="<?php echo $proveedorEncontrado->get_nombreEmpresa(); ?>" /></td>
+                <?php }else{ ?>
+                <td>
+                   <select NAME="comboProveedores" SIZE=1>
+                    <?php foreach($proveedores as $proveedor){ ?>
+                    <option VALUE="<?php echo $proveedor->get_proveedorId(); ?>"><?php echo $proveedor->get_nombreEmpresa(); ?></option>
+                    <?php } ?>
+                    </select>
+                </td>
+                <?php } ?>
+                <td><label for="cantidad">Cantidad*</label></td>
+                <td><input type="text" name="cantidad" /></td>
+            </tr>
+            <tr>
+                <td><label for="proveedor">Categoria*</label></td>
+                 <td>
+                    <select NAME="comboCategorias" SIZE=1>
+                    <?php foreach($categorias as $categoria){ ?>
+                    <option VALUE="<?php echo $categoria->get_categoriaId(); ?>"><?php echo $categoria->get_nombre(); ?></option>
+                    <?php } ?>
+                    <option VALUE="0"> otro </option>
+                    </select>
+                </td>
+                <td><label for="cantidad">Precio Compra*</label></td>
+                <td><input type="text" name="precioCompra" /></td>
+            </tr>
+            <tr>
+                <td><label for="proveedor">Tipo*</label></td>
+                <td><select NAME="comboTipos" SIZE=1 class="alinearIzquierda">
+                    <?php foreach($tipos as $tipo){ ?>
+                    <option VALUE="<?php echo $tipo->get_tipoId(); ?>"><?php echo $tipo->get_nombre(); ?></option>
+                    <?php } ?>
+                    </select>
+                </td>
+                <td><label for="cantidad">Precio Venta*</label></td>
+                <td><input type="text" name="precioVenta" /></td>
+            </tr>
+            <tr>
+
+                <td><label for="proveedor">Marca*</label></td>
+                <td><input type="text" name="marca" /></td>
+
+                <td><label for="cantidad">Descripcion*</label></td>
+                <td><input type="text" name="descripcion" /></td>
+
+
+            </tr>
+
+            <tr>
+                <td class="centrarTexto"><input type="submit"  value="Agregar"/></td>
+                <td class="centrarTexto"><input type="reset"  value="Limpiar"/></td>
+            </tr>
+        </table>
+      </form>
+    </div>
+</div>
+</body>
+</html>

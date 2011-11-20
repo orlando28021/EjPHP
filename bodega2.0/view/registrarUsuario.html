@@ -1,0 +1,160 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../../bodega2.0/view/css/style.css" />
+
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg"  class="logo"/></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner"/></div></td>
+    <td><form name="registrar" method="post" action="../../bodega2.0/view/?opcion=ingresar">
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>Iniciar Sesi&oacute;n</td>
+          </tr>
+        <tr>
+          <td>Usuario</td>
+          <td><input type="text" name="usuario"/></td>
+          </tr>
+        <tr>
+          <td>Contrase&ntilde;a</td>
+          <td><input type="password" name="contrasenha"/></td>
+          </tr>
+        <tr>
+          <td><input type="submit" name="boton" value="Ingresar"/></td>
+          <td><a href="?opcion=oContra">Olvidaste tu contrase&ntilde;a?</a></td>
+          </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><a href="?opcion=registrar">Registrarse</a></td>
+          </tr>
+        </table>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principal"><img src="../img/botones/Inicio1.png"/></a></td>
+        <td><a href="?opcion=nosotros"><img src="../img/botones/Nosotros.png"/></a></td>
+        <td><a href="?opcion=catalogo"><img src="../img/botones/Catalogo.png"/></a></td>
+        <td><a href="?opcion=novedades"><img src="../img/botones/Novedades.png"/></a></td>
+        <td><a href="?opcion=contactenos"><img src="../img/botones/contactenos.png"/></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+    <tr>
+        <td colspan="4">
+   <form  method="post" action="?opcion=registrarU">
+      <table>
+        <tr>
+            <td><table class="detCli">
+            <tr>
+                <td><h1>Datos Personales</h1></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <th>DNI*</th>
+                <td><input type="text" name="dni" maxlength="8" placeholder="Ingresar DNI" /></td>
+            </tr>
+            <tr>
+                <th>Nombres*</th>
+                <td><input type="text" name="nombres"  placeholder="Ingresar Nombres"/></td>
+            </tr>
+            <tr>
+              <th>Apellido Paterno*</th>
+              <td><input type="text" name="apellidoP"  placeholder="Apellido Paterno"/></td>
+            </tr>
+            <tr>
+              <th>Apellido Materno*</th>
+              <td valign="top"><input type="text" name="apellidoM" placeholder="Apellid Materno"/></td>
+            </tr>
+            <tr>
+              <th>Contrase&ntilde;a*</th>
+              <td><input type="password" name="clave" placeholder="Escriba su Contrase&ntilde;a"/></td>
+            </tr>
+            <tr>
+              <th>Repetir Contrase&ntilde;a*</th>
+              <td><input type="password" name="claveR" placeholder="Repita su Contrase&ntilde;a"/></td>
+            </tr>
+          </table></td>
+          <td><table class="detCli">
+            <tr>
+              <th>Forma de Cont&aacute;cto</th>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <th>Correo*</th>
+              <td><input type="text" name="correo" placeholder="Correo" /></td>
+            </tr>
+            <tr>
+              <th>Tel&eacute;fono de Cont&aacute;cto*</th>
+              <td><input type="text" name="telefono" placeholder="Tel&eacute;fono" /></td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td>
+            <p name="textarea">
+              <textarea name="textarea" cols="40" rows="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+            </p>
+          </td>
+          <td><table class="detCli">
+            <tr>
+              <th>Ingresar Direcci&oacute;n de Residencia</th>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td><h4>Distrito*</h4></td>
+              <td>
+              <select NAME="comboDistrito" SIZE=1> 
+                <option VALUE="1">Surquillo</option>
+                <option VALUE="2">SMP</option>
+                <option VALUE="3">Miraflores</option>
+                <option VALUE="4">San Isidro</option> 
+              </select>    
+              </td>
+            </tr>
+            <tr>
+              <th>Direcci&oacute;n*</th>
+              <td><input type="text" name="direccion" placeholder="Ingresar su Direcci&oacute;n" /></td>
+            </tr>
+            <tr>
+              <th>Departamento*</th>
+              <td><input type="text" name="departamento" placeholder="Departamento" /></td>
+            </tr>
+            <tr>
+                <th>Referencia*</th>
+              <td valign="top"><input type="text" name="referencia" placeholder="Refernecia"/></td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td><table>
+            <tr>
+              <td><p>
+                <input type="checkbox" name="condicion" />
+              </p></td>
+              <td>Acepto las condiciones de venta y privacidad de datos</td>
+            </tr>
+          </table></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td><input type="submit"  value="Registrar" /></td>
+          <td><input type="reset" name="borrar" value="Borrar" /></td>
+        </tr>
+      </table></form>
+      <blockquote>        
+</blockquote>
+   </td>   
+  </tr>
+</table>
+</body>
+</html>

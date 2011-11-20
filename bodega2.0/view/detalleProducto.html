@@ -1,0 +1,99 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../../bodega2.0/view/css/style.css" />
+
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo"/></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner"/></div></td>
+    <td><form name="detalleProducto" method="post" action="../../bodega2.0/view/?opcion=ingresar">
+        <div id="cerrarSesion">
+            <table>
+                <tr>
+                  <td>Bienvenido, Administrador</td>
+                </tr>
+                <tr>
+                  <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+                </tr>
+            </table>
+        </div>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principalA"><img src="../img/botones/Inicio2.png"></a></td>
+        <td><a href="?opcion=clientes"><img src="../img/botones/Clientes.png"></a></td>
+        <td><a href="?opcion=producto"><img src="../img/botones/Productos.png"></a></td>
+        <td><a href="?opcion=proveedores"><img src="../img/botones/Proveedores.png"></a></td>
+        <td><a href="?opcion=historial"><img src="../img/botones/Historial.png"></a></td>
+        <td><a href="?opcion=mensajes"><img src="../img/botones/Mensajes.png"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+    <tr>
+    <td colspan="4">
+        <h2>Ver Detalle</h2><form name="formd" method="post" action="">        
+      <table>
+        <tr>
+        <td>
+            <table class="detCli">
+        <tr>
+          <th>Proveedor*</th>
+          <td><input type="text" size="40" name="proveedor" value="<?php echo $nombreProveedor; ?>" disabled /></td>
+        </tr>
+        <tr>
+          <th>Categor&iacute;a*</th>
+          <td><input type="text" value="<?php echo $nombreCategoria?>" disabled/></td>
+        </tr>
+        <tr>
+          <th>Tipo*</th>
+          <td><input type="text" value="<?php echo $nombreTipo?>" disabled/></td>
+        </tr>
+        <tr>
+          <th>Marca*</th>
+          <td><input type="text" name="marca" size="40" value="<?php echo $nuevoProducto->get_marca();?>" disabled/></td>
+        </tr>
+      </table> </td>
+      <td><table class="detCli">
+        <tr>
+          <th>Cantidad*</th>
+          <td><input type="text" size="20" name="cantidad" value="<?php echo $nuevoProducto->get_cantidad();?>" disabled/></td>
+        </tr>
+        <tr>
+          <th>Precio de Compra*</th>
+          <td><input type="text" size="20" name="precioCompra" value="<?php echo $nuevoProducto->get_costo();?>" disabled/></td>
+        </tr>
+        <tr>
+          <th>Precio de Venta*</th>
+          <td><input type="text" size="20" name="precioVenta"value="<?php echo $nuevoProducto->get_precio();?>" disabled /></td>
+        </tr>
+        <tr>
+            <th>Ganancia</th>
+            <td><input type="text" name="ganancia" value="<?php echo $ganancia ?>" disabled/></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table> </td>
+        </tr>
+        <tr>
+          <td><a href="?opcion=producto">Volver</a></td>
+          <td height="70" align="right"><input type="submit" name="modificar" value="Modificar" /></td>
+          <td height="70"><input type="submit" name="borrar" value="Borrar"/></td>
+        </tr>                 
+      </table></form>
+      
+   </td>   
+  </tr>
+</table>
+</body>
+</html>

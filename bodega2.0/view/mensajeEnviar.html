@@ -1,0 +1,96 @@
+<!--<!--<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head><title>El Bodeguero 2.0::Mensaje Enviar</title>
+
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    </head>
+    <body>
+        <table  width="1024">
+            <tr>
+                <td><img src="../img/logo.jpg" class="logo"/></td>
+                <td><div id="logo"><img src="../img/El_Bodeguero.jpg"class="banner"/></div></td>
+                <td>
+                    <form name="mensajeEnviar" method="post" action="?opcion=salir">
+                        <div id="cerrarSesion">
+                            <table>
+                                <tr>
+                                    <td>Bienvenido, Administrador</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">Cerrar Sesi&oacute;n</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </form>        
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principalA"><img src="../img/botones/Inicio2.png"></a></td>
+        <td><a href="?opcion=clientes"><img src="../img/botones/Clientes.png"></a></td>
+        <td><a href="?opcion=producto"><img src="../img/botones/Productos.png"></a></td>
+        <td><a href="?opcion=proveedores"><img src="../img/botones/Proveedores.png"></a></td>
+        <td><a href="?opcion=historial"><img src="../img/botones/Historial.png"></a></td>
+        <td><a href="?opcion=mensajes"><img src="../img/botones/Mensajes.png"></a></td>
+      </tr>
+    </table>
+                    <br />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <form method="post" action="?opcion=enviarMensaje">
+                        <table class="tabla1ME">
+                            <tr>
+                                <td>
+                                    <table class="tabla2ME">
+                                        <tr>
+                                            <td>
+                                                <input type="submit" name="enviar" value="Enviar" />
+                                            </td>
+                                            <td>
+                                                <a href="?opcion=regresar">Bandeja de Entrada</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr class="td1ME">
+                                            <td>Para:</td>
+                                            <td><input type="text" name="forEmail"  placeholder="Ingresar Mail"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td1ME">Asunto:</td>
+                                            <td><input type="text" name="subject" placeholder="Ingresar Asunto"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <textarea name="bodyMessage" cols="100" rows="6" placeholder="Cuerpo del Mensaje">
+										
+                                                </textarea>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>                   
+                        </table>
+                    </form>
+                </td>
+            </tr>
+
+        </table>
+    </body>
+</html>

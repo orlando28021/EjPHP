@@ -1,0 +1,76 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo"/></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner" /></div></td>
+    <td><form name="form1" method="post" action="?opcion=ingresar">
+      <div id="cerrarSesion">
+      <table>
+        <tr>
+          <td>Bienvenido, Administrador</td>
+        </tr>
+        <tr>
+          <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+        </tr>
+      </table>
+      </div>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principal"><img src="../img/botones/Inicio1.png"></a></td>
+        <td><a href="?opcion=nosotros"><img src="../img/botones/Nosotros.png"></a></td>
+        <td><a href="?opcion=catalogo"><img src="../img/botones/Catalogo.png"></a></td>
+        <td><a href="?opcion=novedades"><img src="../img/botones/Novedades.png"></a></td>
+        <td><a href="?opcion=contactenos"><img src="../img/botones/contactenos.png"></a></td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    </td>
+  </tr>
+</table>
+    <div id="main">
+		<h1>Resumen de su Carrito</h1>
+		<p>Su carrito su contiene <?php echo $longitud;?> productos<p>
+			
+                <table class="carrito">
+			<tr>
+				<th>Producto</th>
+				<th>Precio Unitario</th>
+				<th>Cantidad</th>
+				<th>Acci&oacute;n</th>
+			</tr>
+                    <?foreach($lista as $prod) {?>
+                    <tr>
+				 <td><?php echo $prod->get_marca();?></td>
+				 <td><?php echo $prod->get_precio();?></td>
+                                 <td><input type="text" name="txt_cantidad" maxlength="2" value="<?php echo $cantidadProd[$prod->get_productoId()] ;?>" class="fieldCarrito" disabled/></td>
+                                 <td><a href="?opcion=eliminarProd&id=<?php echo $prod->get_productoId();?>"><img src="../img/eliminar.jpg"/></a></td>   
+		   </tr>
+                   <? } ?>
+		   <tr>
+			   <td colspan="2">&nbsp;</td>
+			   <td>Total: </td>
+			   <td><?php echo $total; ?></td>
+			   <td>&nbsp;</td>
+		   </tr>
+		   <tr>
+			   <td colspan="2"><a href="?opcion=catalogo"><< Volver al cat&aacute;logo</a></td>
+			   <td colspan="2"><a href="?opcion=enviarOrden">Enviar orden de compra >></a></td>
+		   </tr>
+		</table>			
+    </div>
+</body>
+</html>
+

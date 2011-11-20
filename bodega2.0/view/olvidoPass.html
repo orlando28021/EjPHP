@@ -1,0 +1,78 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../../bodega2.0/view/css/style.css" />
+    
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo"/></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner"/></div></td>
+    <td><form name="form1" method="post" action="../../bodega2.0/view/?opcion=ingresar">
+      <table>
+        <tr>
+          <td>&nbsp;</td>
+          <td>Iniciar Sesi&oacute;n</td>
+          </tr>
+        <tr>
+          <td>Usuario</td>
+          <td><input type="text" name="usuario"/></td>
+          </tr>
+        <tr>
+          <td>Contrase&ntilde;a</td>
+          <td><input type="password" name="contrasenha"/></td>
+          </tr>
+        <tr>
+          <td><input type="submit" name="boton" value="Ingresar"/></td>
+          <td><a href="?opcion=oContra">Olvidaste tu contrase&ntilde;a?</a></td>
+          </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><a href="?opcion=registrar">Registrarse</a></td>
+          </tr>
+        </table>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principal"><img src="../img/botones/Inicio1.png"></a></td>
+        <td><a href="?opcion=nosotros"><img src="../img/botones/Nosotros.png"></a></td>
+        <td><a href="?opcion=catalogo"><img src="../img/botones/Catalogo.png"></a></td>
+        <td><a href="?opcion=novedades"><img src="../img/botones/Novedades.png"></a></td>
+        <td><a href="?opcion = contactenos"><img src="../img/botones/contactenos.png"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+    <tr>
+    <td colspan="4"><form name="olvPass" method="post" action="">
+            <table class="modProd">
+          <tr>
+              <td>&nbsp;</td>
+          </tr> 
+        <tr>
+          <td class="td1OP"><h1>Olvid&oacute; su Contrase&ntilde;a</h1></td>
+        </tr>
+        <tr>
+          <td><p class="td2OP">Correo:</p></td>
+          <td><input name="correo" type="text"  size="50"/></td>
+        </tr>
+        <tr>
+          <td><p class="td2OP">DNI:</p></td>
+          <td><input name="dni" type="text"  size="10" /></td>
+        </tr>
+        <tr>
+          <td align="right"><input type="submit" name="enviar" value="Enviar"></td>
+          <td><input type="reset" name="cancelar" value="Cancelar"/></td>
+        </tr>
+      </table></form>
+   </td>   
+  </tr>
+</table>
+</body>
+</html>

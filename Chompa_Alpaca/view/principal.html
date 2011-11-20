@@ -1,0 +1,32 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chompa Alpaca</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="chompa.css" />
+    </head>
+    <body>
+        <div>
+            <h1>Carrito de Compras</h1>
+            <form method="post" action="pedidos.php">
+                <p>
+                    <SELECT NAME="chompas" SIZE=1 > 
+                        <OPTION VALUE="1">Office</OPTION>
+                        <OPTION VALUE="2">Mid Season</OPTION>
+                        <OPTION VALUE="3">Holmes</OPTION>
+                        <OPTION VALUE="4">Gigardo</OPTION>
+                        <OPTION VALUE="5">Anton</OPTION>
+                        <OPTION VALUE="6">L'Blanc</OPTION>
+                    </SELECT>
+                    <input type="text" name="cantidad" maxlength="3" size="3" />
+                </p>
+                <p><input type="submit" name="seleccionar" value="Seleccionar" /></p>
+                <p><a href="?op=volver">Volver</a></p>
+            </form>
+        </div>
+    </body>
+</html>

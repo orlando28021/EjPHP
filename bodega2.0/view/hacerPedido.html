@@ -1,0 +1,116 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+</head>
+<body>
+<table  width="1024">
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo"/></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner"/></div></td>
+    <td><form name="hacerPedido" method="post" action="?opcion=salir">
+      <div id="cerrarSesion">
+      <table>
+        <tr>
+          <td>Bienvenido, Administrador</td>
+        </tr>
+        <tr>
+          <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+        </tr>
+      </table>
+      </div>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principalA"><img src="../img/botones/Inicio2.png"></a></td>
+        <td><a href="?opcion=clientes"><img src="../img/botones/Clientes.png"></a></td>
+        <td><a href="?opcion=producto"><img src="../img/botones/Productos.png"></a></td>
+        <td><a href="?opcion=proveedores"><img src="../img/botones/Proveedores.png"></a></td>
+        <td><a href="?opcion=historial"><img src="../img/botones/Historial.png"></a></td>
+        <td><a href="?opcion=mensajes"><img src="../img/botones/Mensajes.png"></a></td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    </td>
+  </tr>
+</table>
+<div id="pedidoMain">
+  <div id="pedidoContent">
+        <div id="cabeceraProveedores">
+            <p>Proveedores</p>
+        </div>
+            <h1 class="centrarTexto">Proveedor 1</h1>
+        <form name="formHacerPedido" method="post" action="">
+        <div id="hacerPedido">
+            <h3>Hacer Pedido</h3>
+                <table class="centrar">
+           <tr>
+               <th>ID</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Acci&oacute;n</th>
+            </tr>         
+                        <?php foreach($productos as $producto){ ?>
+            <tr>
+            <td><?php echo $producto->get_productoId(); ?></td>
+            <td><?php echo $tipo->getNombrePorId($producto->get_tipoId()); ?> -
+                <?php echo $producto->get_marca(); ?>
+            </td>
+            <td><input type="text" name="cantidad" maxlength="2" size="3" placeholder="Cantidad"/></td>
+            <td><?php echo $producto->get_costo(); ?></td>
+            <td><?php echo $producto->get_precio(); ?></td>
+            <td>
+                <a href="?opcion=agregarCarrito&id=<?php echo $producto->get_productoId(); ?>">Agregar</a>
+                
+            </td>
+          </tr>
+          <?php } ?>
+              </table>            
+            <br /> 
+        </div>
+        <div id="carritoPedido">
+        <h3 class="margenCarrito">Carrito</h3>
+        <div id="scrollProveedores">        
+            <table class="tablaProveedores" border="1">
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Costo</th>
+                <th>Acci&oacute;n</th>
+            </tr>
+           
+            <tr>
+            <td><?php echo $tipo->getNombrePorId($buscar->get_tipoId()); ?> -
+                <?php echo $buscar->get_marca(); ?>
+            </td>
+            <td><?php echo $cantidad; ?></td>
+            <td><?php echo $buscar->get_costo(); ?></td>
+            <td>
+                <a href="?opcion=eliminarCarrito&id=<?php echo $producto->get_productoId(); ?>">Eliminar</a>
+                
+            </td>
+          </tr>
+            
+            </table>
+        </div>
+        <br />
+        <input type="submit" name="botonEnviar" value="Enviar" class="margenCarrito2" />
+        </div>
+        </form>
+        <a href="?opcion=proveedores" class="margRegresar">Regresar</a>
+    </div>   
+</div>
+</body>
+</html>
+
+
+
+        

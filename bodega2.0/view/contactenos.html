@@ -1,0 +1,100 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../../bodega2.0/view/css/style.css" />
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo" /></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner" /></div></td>
+    <td><form name="contactenos" method="post" action="">
+      <table>
+        <?php if($usuario == null){ ?>
+          <tr>
+          <td>&nbsp;</td>
+          <td>Iniciar Sesi&oacute;n</td>
+          </tr>
+        <tr>
+          <td>Usuario</td>
+          <td><input type="text" name="usuario"/></td>
+          </tr>
+        <tr>
+          <td>Contrase&ntilde;a</td>
+          <td><input type="password" name="contrasenha"/></td>
+          </tr>
+        <tr>
+          <td><input type="submit" name="ingresar" value="Ingresar"/></td>
+          <td><a href="?opcion=oContra">Olvidaste tu contrase&ntilde;a?</a></td>
+          </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><a href="?opcion=registrar">Registrarse</a></td>
+          </tr>
+          <?php }else{ ?>
+          <tr>
+          <td colspan="2">Bienvenido,<?php echo $usuario->get_correoElectronico(); ?> </td>
+        </tr>
+        <tr>
+          <td><a href="?opcion=miCuenta">Mi cuenta</a></td>
+          <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+        </tr>
+        <?php } ?>
+        </table>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principal"><img src="../img/botones/Inicio1.png"/></a></td>
+        <td><a href="?opcion=nosotros"><img src="../img/botones/Nosotros.png"/></a></td>
+        <td><a href="?opcion=catalogo"><img src="../img/botones/Catalogo.png"/></a></td>
+        <td><a href="?opcion=novedades"><img src="../img/botones/Novedades.png"/></a></td>
+        <td><a href="?opcion=contactenos"><img src="../img/botones/contactenos.png"/></a></td>
+      </tr>
+    </table>    
+    </td>
+  </tr>
+</table>
+    <div>  
+        <form action="?opcion=enviarMensaje" method="post">
+<table class="tablaContactenos">
+  <tr>
+    <td>
+      <h2>Cont&aacute;ctenos</h2>
+      <table>
+        <tr>
+          <td class="letrasContac">Nombre:</td>
+          <td><input name="nombre" type="text" size="50" placeholder="Ingrese su Nombre"/></td>
+        </tr>
+        <tr>
+          <td class="letrasContac">Correo:</td>
+          <td><input name="correo" type="text" size="50" placeholder="Ingrese su Correo" /></td>
+        </tr>
+        <tr>
+          <td class="letrasContac">Asunto:</td>
+          <td><input name="asunto" type="text" size="50" placeholder="Ingrese el Asunto" /></td>
+        </tr>
+        <tr>
+          <td class="letrasContac">Mensaje:</td>
+          <td><textarea name="mensaje" cols="50" rows="15" placeholder="Ingrese el Mensaje"/></textarea></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td align="right"><input type="submit" name="enviar" value="Enviar"/></td>
+        </tr>
+      </table>
+	 </td>
+    <td>
+		<h2>La Bodeguita</h2>
+                <iframe class="mapa" src="http://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=Universidad+San+Ignacio+De+Loyola,+Los+Jilgueros,+La+Molina,+Lima,+Per%C3%BA&amp;aq=0&amp;sll=40.396764,-3.713379&amp;sspn=10.018759,19.753418&amp;vpsrc=6&amp;ie=UTF8&amp;hq=Universidad+San+Ignacio+De+Loyola,+Los+Jilgueros,+La+Molina,+Lima,+Per%C3%BA&amp;ll=-12.072774,-76.952468&amp;spn=0.021822,0.032015&amp;t=m&amp;output=embed"></iframe><br />
+     </td>
+  </tr>
+</table>
+        </form>
+        </div>
+</body>
+</html>

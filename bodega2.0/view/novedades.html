@@ -1,0 +1,120 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+<table  width="1024">
+  <tr >
+      <td><img src="../img/logo.jpg" class="logo" /></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner"/></div></td>
+    <td><form name="novedades" method="post" action="">
+      <table>
+        <?php if($usuario == null){ ?>
+          <tr>
+          <td>&nbsp;</td>
+          <td>Iniciar Sesi&oacute;n</td>
+          </tr>
+        <tr>
+          <td>Usuario</td>
+          <td><input type="text" name="usuario"/></td>
+          </tr>
+        <tr>
+          <td>Contrase&ntilde;a</td>
+          <td><input type="password" name="contrasenha"/></td>
+          </tr>
+        <tr>
+          <td><input type="submit" name="boton" value="Ingresar"/></td>
+          <td><a href="?opcion=oContra">Olvidaste tu contrase&ntilde;a?</a></td>
+          </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><a href="?opcion=registrar">Registrarse</a></td>
+          </tr>
+          <?php }else{ ?>
+          <tr>
+          <td colspan="2">Bienvenido,<?php echo $usuario->get_correoElectronico(); ?> </td>
+        </tr>
+        <tr>
+          <td><a href="?opcion=miCuenta">Mi cuenta</a></td>
+          <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+        </tr>
+        <?php } ?>
+        </table>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principal"><img src="../img/botones/Inicio1.png"/></a></td>
+        <td><a href="?opcion=nosotros"><img src="../img/botones/Nosotros.png"/></a></td>
+        <td><a href="?opcion=catalogo"><img src="../img/botones/Catalogo.png"/></a></td>
+        <td><a href="?opcion=novedades"><img src="../img/botones/Novedades.png"/></a></td>
+        <td><a href="?opcion=contactenos"><img src="../img/botones/contactenos.png"/></a></td>
+      </tr>
+    </table>
+      <table>
+        <tr>
+          <td><h2>Nuevos Producto</h2>
+    	<div id="novedades">
+    	  <table>
+    	    <tr>
+    	      <td><img src="../img/sublimewafer.jpg" width="150" height="150"></td>
+    	      <td><blockquote>
+    	        <h3>Sublime Wafer</h3>
+    	        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    	      </blockquote>   	          </td>
+              <td class="novedad"><h3>S/ 1.00</h3></td>
+   	        </tr>
+    	    <tr>
+    	      <td><img src="../img/calabaza.JPG" width="150" height="150"></td>
+    	      <td><blockquote>
+    	        <h3>Calabaza de Haloween</h3>
+    	        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+  	        </blockquote>   	          </td>
+              <td class="novedad"><h3>S/ 3.00</h3></td>
+   	        </tr>
+    	    <tr>
+    	      <td><img src="../img/lifebebida.jpg" width="150" height="150"></td>
+    	      <td><blockquote>    	        
+    	        <h3>Life</h3>
+    	        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>       
+   	          </blockquote>   	  </td>
+              <td class="novedad"><h3>S/ 1.50</h3></td>
+   	        </tr>
+   	      </table>
+  	  </div></td>
+          <td> <h2>Nuevas Ofertas
+          </h2>
+              <div id="novedades">
+                  <table class="ofertas">
+            <tr>
+              <td width="424" height="150"><blockquote>
+                <h3>Caramelos Masticables Arcor</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </blockquote>              </td>
+            </tr>
+            <tr>
+              <td width="424" height="150"><blockquote>
+                <h3>Calabaza de Haloween</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </blockquote></td>
+            </tr>
+            <tr>
+              <td width="424" height="150"><blockquote>
+                <h3>Wafer Morochas</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </blockquote></td>
+            </tr>
+          </table>
+        </div>      </td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+    </tr>
+</table>
+</body>
+</html>

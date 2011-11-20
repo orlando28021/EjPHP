@@ -1,0 +1,81 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+
+<body>
+<table width="1024">
+  <tr>
+      <td><img src="../img/logo.jpg"class="logo" /></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner" /></div></td>
+    <td>
+        <form name="nosotros" method="post" action="">
+      <table>
+       <?php if ($usuario == null ){ ?>
+          <tr>
+          <td>&nbsp;</td>
+          <td>Iniciar Sesi&oacute;n</td>
+          </tr>
+        <tr>
+          <td>Usuario</td>
+          <td><input type="text" name="usuario"/></td>
+          </tr>
+        <tr>
+          <td>Contrase&ntilde;a</td>
+          <td><input type="password" name="contrasenha"/></td>
+          </tr>
+        <tr>
+          <td><input type="submit" name="ingresar" value="Ingresar"/></td>
+          <td><a href="?opcion=oContra">Olvidaste tu contrase&ntilde;a?</a></td>
+          </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><a href="?opcion=registrar">Registrarse</a></td>
+          </tr>
+          <?php } else{ ?>
+          <tr>
+          <td colspan="2">Bienvenido,<?php echo $usuario->get_correoElectronico(); ?> </td>
+        </tr>
+        <tr>
+          <td><a href="?opcion=miCuenta">Mi cuenta</a></td>
+          <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+        </tr>
+        <?php } ?>
+        </table>
+    </form></td>
+  </tr>
+  <tr>
+    <td colspan="5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td width="160" align="center"><a href="?opcion=principal"><img src="../img/botones/Inicio1.png"/></a></td>
+        <td width="160" align="center"><a href="?opcion=nosotros"><img src="../img/botones/Nosotros.png"/></a></td>
+        <td width="160" align="center"><a href="?opcion=catalogo"><img src="../img/botones/Catalogo.png"/></a></td>
+        <td width="160" align="center"><a href="?opcion=novedades"><img src="../img/botones/Novedades.png"/></a></td>
+        <td width="160" align="center"><a href="?opcion=contactenos"><img src="../img/botones/contactenos.png"/></a></td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    </td>
+  </tr>
+</table>
+<div id="adminMain">
+    <div id="cont-left">
+        <h2>Nosotros</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h2>Misi&oacute;n</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h2>Visi&oacute;n</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
+    </div>
+    <div id="cont-right">
+        <img src="../img/emp-Bod.JPG">
+    </div>    
+</div>
+</body>
+</html>

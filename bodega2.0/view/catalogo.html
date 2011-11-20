@@ -1,0 +1,89 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo" /></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner"/></div></td>
+    <td><form name="catalogo" method="post" action="?opcion=salir">
+      <div id="cerrarSesion">
+      <table>
+        <tr>
+          <td colspan="2">Bienvenido, <?php echo $usuario->get_correoElectronico(); ?></td>
+        </tr>
+        <tr>
+          <td><a href="?opcion=miCuenta">Mi cuenta</a></td>
+          <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+        </tr>
+      </table>
+      </div>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principal"><img src="../img/botones/Inicio1.png" /></a></td>
+        <td><a href="?opcion=nosotros"><img src="../img/botones/Nosotros.png"/></a></td>
+        <td><a href="?opcion=catalogo"><img src="../img/botones/Catalogo.png"/></a></td>
+        <td><a href="?opcion=novedades"><img src="../img/botones/Novedades.png"/></a></td>
+        <td><a href="?opcion=contactenos"><img src="../img/botones/contactenos.png"/></a></td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    </td>
+  </tr>
+</table>
+<div id="contenedor-prod">
+<h2>Catalogo de Productos</h2>
+    
+    <div id="main-categoria">
+        <form action="?opcion=bCategoria" method="post">   
+        <label>Categoria: </label> 
+        <select NAME="comboCategoria" SIZE=1> 
+      <?php foreach($categoria as $cate) { ?>
+      <option VALUE="<?php echo $cate->get_categoriaId(); ?>"><?php echo $cate->get_nombre(); ?></option>
+      <?php } ?>  
+        </select>
+        <input type="submit" name="botonBuscar" value="Buscar" />
+        </form>
+    </div>
+    <div id="main-productos">
+        <form action="" method="post">    
+            <table>
+              <?php foreach($productos as $producto) {?>  
+            <tr>
+                <td>
+                    <div id="imgProducto">
+                    <img src="../img/lecheGloria.jpg"/>
+                    </div>
+                </td>
+                <td>
+                    <div id="descripProducto">  
+                    <h3><?php echo $producto->get_marca(); ?></h3>
+                    <p><?php echo $producto->get_descripcion(); ?></p>
+                    </div>
+                </td>
+                <td>
+                    <div id="agregarProducto">
+                    <p>S/. <?php echo $producto->get_precio(); ?><br />
+                        Disponible: <?php echo $producto->get_cantidad(); ?></p>
+                    <a href="?opcion=agregar&id=<?php echo $producto->get_productoId(); ?>">Agregar</a>
+                    </div>
+                </td>
+            </tr>
+            <?php } ?>
+        </table>
+    </form>
+    </div>
+</div>
+</body>
+</html>
+

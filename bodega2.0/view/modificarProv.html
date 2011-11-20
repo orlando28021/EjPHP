@@ -1,0 +1,106 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo"/></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner"/></div></td>
+    <td><form name="form1" method="post" action="?opcion=salir">
+      <div id="cerrarSesion">
+      <table>
+        <tr>
+          <td colspan="2">Bienvenido, Administrador</td>
+        </tr>
+        <tr>
+          <td colspan="2"><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+        </tr>
+      </table>
+      </div>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principalA"><img src="../img/botones/Inicio2.png"></a></td>
+        <td><a href="?opcion=clientes"><img src="../img/botones/Clientes.png"></a></td>
+        <td><a href="?opcion=producto"><img src="../img/botones/Productos.png"></a></td>
+        <td><a href="?opcion=proveedores"><img src="../img/botones/Proveedores.png"></a></td>
+        <td><a href="?opcion=historial"><img src="../img/botones/Historial.png"></a></td>
+        <td><a href="?opcion=mensajes"><img src="../img/botones/Mensajes.png"></a></td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    </td>
+  </tr>
+  <tr>
+</table>
+<div id="AdminMain">
+<div id="adminContent">
+        <h2>Modificar Proveedor</h2>
+        <form name="formModificarProducto" method="post" action="?opcion=modificarProveedor&id=<?php echo $proveedorEncontrado->get_proveedorId(); ?>">
+        <div id="empresa">
+            <h3>Empresa</h3>
+            <table class="espacioCeldas, centrar">
+            <tr>
+                <td><label for="ruc">RUC</label></td>
+                <td><input type="text" name="ruc" value="<?php echo $proveedorEncontrado->get_ruc(); ?>" /></td>
+            </tr>
+            <tr>
+                 <td><label for="nombre">Nombre</label></td>
+                 <td><input type="text" name="nombre" value="<?php echo $proveedorEncontrado->get_nombreEmpresa(); ?>" /></td>
+            </tr>
+            <tr>
+                 <td><label for="correo">Correo</label></td>
+                 <td><input type="text" name="correo" value="<?php echo $proveedorEncontrado->get_correo(); ?>"/></td>
+            </tr>
+           </table>        
+        </div>
+        <div id="Contacto">
+            <h3>Contacto</h3>
+            <table class="espacioCeldas, centrar">
+                <tr>
+                    <td><label for="nombres">Nombres</label></td>
+                    <td><input type="text" name="nombres" value="<?php echo $proveedorEncontrado->get_nombreContacto(); ?>"/></td>
+                </tr>
+                <tr>
+                    <td><label for="apellidos">Apellidos</label></td>
+                    <td><input type="text" name="apellidos" value="<?php echo $proveedorEncontrado->get_apellidoContacto(); ?>"/></td>
+                </tr>
+                <tr>
+                    <td><label for="dni">DNI</label></td>
+                    <td><input type="text" name="dni" value="<?php echo $proveedorEncontrado->get_dniContacto(); ?>"/></td>
+                </tr>
+                <tr>
+                    <td><label for="telefono">Telefono</label></td>
+                    <td><input type="text" name="telefono" value="<?php echo $proveedorEncontrado->get_telefonoContacto(); ?>"/></td>
+                </tr>            
+            </table>
+        </div>
+            <div id="EnlacesModProv">
+            <table class="espacioCeldas centrarTexto">
+                <tr>
+                   
+                </tr>
+                <tr>
+                    <td><a href="?opcion=proveedores">Regresar</a></td>
+                    <td><input type="submit" name="botonAgregarProveedor" value="Modificar"></td>
+                </tr>
+            </table>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+        

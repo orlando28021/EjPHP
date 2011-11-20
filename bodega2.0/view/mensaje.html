@@ -1,0 +1,89 @@
+<!--<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo"/></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner"/></div></td>
+    <td >
+        <form name="mensaje" method="post" action="?opcion=salir">
+            <div id="cerrarSesion">
+                <table>
+                    <tr>
+                      <td>Bienvenido, Administrador</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">Cerrar Sesi&oacute;n</a></td>
+                    </tr>
+                </table>
+            </div>
+        </form>        
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principalA"><img src="../img/botones/Inicio2.png"></a></td>
+        <td><a href="?opcion=clientes"><img src="../img/botones/Clientes.png"></a></td>
+        <td><a href="?opcion=producto"><img src="../img/botones/Productos.png"></a></td>
+        <td><a href="?opcion=proveedores"><img src="../img/botones/Proveedores.png"></a></td>
+        <td><a href="?opcion=historial"><img src="../img/botones/Historial.png"></a></td>
+        <td><a href="?opcion=mensajes"><img src="../img/botones/Mensajes.png"></a></td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    </td>
+  </tr>
+  <tr>
+      <td colspan="6">
+          <form method="post" action="">
+              <table class="tablaM">                  
+                  <tr>
+                      <td><a href="?opcion=enviarNuevo">Nuevo Mensaje</a></td>                  
+                  </tr>
+                  <tr>
+                      <td>
+                          <table class="tabla2M" >
+                              <tr>
+                                  <th>De</th>
+                                  <th>Asunto</th>
+                                  <th>Opcion</th>
+                              </tr>
+                              <?php foreach($lista as $fila){ ?>
+                              <tr>
+                                  <td><?php echo $fila->get_correo(); ?></td>
+                                  <td><?php echo $fila->get_asunto(); ?></td>
+                                 
+                                  <td align="center" >
+                                      <a href="?opcion=ver&id=<?php echo $fila->get_mensajeId(); ?>"><img src="../img/botones/opcionVer.png"></a>
+                                      <a href="?opcion=eliminar&id=<?php echo $fila->get_mensajeId(); ?>"><img src="../img/botones/opcionEliminarCorreo.png"></a>
+                                  </td>
+                              </tr>
+                              <?php } ?>                              
+                          </table>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>&nbsp;</td>
+                  </tr>                   
+              </table>
+          </form>
+      </td>
+  </tr>
+
+</table>
+</body>
+</html>

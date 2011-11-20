@@ -1,0 +1,87 @@
+<html>
+<head><title>El Bodeguero 2.0</title>
+
+    <link rel="stylesheet" type="text/css" href="../../bodega2.0/view/css/style.css" />
+    
+</head>
+<body>
+<table>
+  <tr>
+      <td><img src="../img/logo.jpg" class="logo" /></td>
+      <td><div id="logo"><img src="../img/El_Bodeguero.jpg" class="banner"/></div></td>
+    <td><form name="productos" method="post" action="../../bodega2.0/view/?opcion=ingresar">
+        <div id="cerrarSesion">
+            <table>
+                <tr>
+                  <td>Bienvenido, Administrador</td>
+                </tr>
+                <tr>
+                  <td><a href="salir.php">Cerrar Sesi&oacute;n</a></td>
+                </tr>
+            </table>
+        </div>
+    </form></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><table>
+      <tr>
+        <td><a href="?opcion=principalA"><img src="../img/botones/Inicio2.png"></a></td>
+        <td><a href="?opcion=clientes"><img src="../img/botones/Clientes.png"></a></td>
+        <td><a href="?opcion=producto"><img src="../img/botones/Productos.png"></a></td>
+        <td><a href="?opcion=proveedores"><img src="../img/botones/Proveedores.png"></a></td>
+        <td><a href="?opcion=historial"><img src="../img/botones/Historial.png"></a></td>
+        <td><a href="?opcion=mensajes"><img src="../img/botones/Mensajes.png"></a></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+    <tr>
+    <td colspan="4">
+      <h2>Productos</h2>
+      <form  method="post" action="?opcion=buscarProducto">
+      <table>
+        <tr>
+            <td class="productosOp"><a href="?opcion=mostrarAgregarProducto">Agregar Producto</a></td>
+          <td class="productosOp"><a href="?opcion=producto">Mostrar Todos</a></td>
+          <td>Busqueda:</td>
+          <td><input type="text" name="producto" placeholder="Nombre del Producto" /></td>
+          <td><input type="submit" value="Buscar" name="buscar" /></td>
+        </tr>
+      </table></form>
+      <form name="formp" method="post" action="">      
+      
+          <table class="tabProd">
+          <tr>
+            <th>C&oacute;digo</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio de Compra (S/)</th>
+            <th>Precio de Venta</th>
+            <th>Opci&oacute;n</th>
+          </tr>
+          <?php foreach($productos as $producto){ ?>
+          <tr >
+            <td align="center"><?php echo $producto->get_productoId(); ?></td>
+            <td align="center"><?php echo $tipo->getNombrePorId($producto->get_tipoId()); ?> -
+                <?php echo $producto->get_marca(); ?>
+            </td>
+            <td align="center">5</td>
+            <td align="center"><?php echo $producto->get_costo(); ?></td>
+            <td align="center"><?php echo $producto->get_precio(); ?></td>
+            <td>
+                <a href="?opcion=detalleProducto&id=<?php echo $producto->get_productoId(); ?>"><img src="../img/botones/opcionVer.png"/></a>
+                <a href="?opcion=mostrarModificarProducto&id=<?php echo $producto->get_productoId(); ?>"><img src="../img/botones/opcionEditar.png"/></a>
+                <a href="?opcion=eliminarProducto&id=<?php echo $producto->get_productoId(); ?>"><img src="../img/botones/opcionEliminar.png"/></a>
+            </td>
+          </tr>
+          <?php } ?>
+         
+        </table></form>     
+    </blockquote></td>    
+  </tr>
+</table>
+</body>
+</html>
